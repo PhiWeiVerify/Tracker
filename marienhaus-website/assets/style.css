@@ -1,0 +1,179 @@
+/* Marienhaus St. Johann e.V. – Grundlayout
+   Ziel: ruhig, gut lesbar (Zielgruppe Senior:innen & Angehörige), WCAG-AA-Kontraste,
+   keine externen Ressourcen (DSGVO: keine Google Fonts, keine Tracker). */
+
+:root {
+  --bg: #fbf8f3;
+  --surface: #ffffff;
+  --text: #2b2622;
+  --muted: #5c544c;
+  --primary: #1f4e79;      /* Blau – Marienfarbe */
+  --primary-dark: #163a5c;
+  --accent: #b5762b;       /* warmes Gold */
+  --line: #e4ddd2;
+  --todo-bg: #fff3c4;
+  --todo-text: #6b4e00;
+  --radius: 10px;
+  --max: 1100px;
+  font-size: 112.5%;       /* 18px Basis */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.25;
+  color: var(--primary-dark);
+}
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 .5em; }
+h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 1.6em 0 .6em; }
+h3 { font-size: 1.25rem; margin: 0 0 .4em; }
+
+a { color: var(--primary); text-underline-offset: .15em; }
+a:hover { color: var(--primary-dark); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--primary); color: #fff; padding: .6em 1em; z-index: 100;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+
+/* Header / Navigation */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky; top: 0; z-index: 50;
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; min-height: 72px;
+}
+.brand {
+  display: flex; flex-direction: column; text-decoration: none; color: var(--primary-dark);
+}
+.brand strong { font-family: Georgia, serif; font-size: 1.25rem; white-space: nowrap; }
+.brand span { font-size: .8rem; color: var(--muted); }
+
+.nav-toggle {
+  display: none; background: none; border: 2px solid var(--primary);
+  color: var(--primary); border-radius: var(--radius); padding: .4em .8em;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: .15rem; }
+.main-nav a {
+  display: block; padding: .5em .6em; border-radius: var(--radius);
+  text-decoration: none; color: var(--text); font-weight: 500;
+}
+.main-nav a:hover { background: var(--bg); }
+.main-nav a[aria-current="page"] { color: var(--primary); background: #e9f0f7; }
+
+@media (max-width: 1120px) {
+  .nav-toggle { display: block; }
+  .main-nav { display: none; width: 100%; padding-bottom: 1rem; }
+  .main-nav.open { display: block; }
+  .main-nav ul { flex-direction: column; }
+  .header-inner { flex-wrap: wrap; }
+}
+@media (max-width: 420px) {
+  .brand strong { font-size: 1.05rem; }
+  .brand span { font-size: .75rem; }
+}
+
+/* Topbar */
+.topbar { background: var(--bg); border-bottom: 1px solid var(--line); font-size: .85rem; }
+.topbar-inner { display: flex; justify-content: space-between; align-items: center; gap: .5rem; flex-wrap: wrap; padding-top: .3rem; padding-bottom: .3rem; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff; padding: 4rem 0 3.5rem;
+}
+.hero h1 { color: #fff; }
+.hero p { font-size: 1.15rem; max-width: 46rem; }
+.hero .btn-row { margin-top: 1.5rem; }
+
+.btn {
+  display: inline-block; padding: .75em 1.3em; border-radius: var(--radius);
+  font-weight: 600; text-decoration: none; margin: 0 .5rem .5rem 0;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #9a6322; color: #fff; }
+.btn-ghost { border: 2px solid #fff; color: #fff; }
+.btn-ghost:hover { background: rgba(255,255,255,.12); color: #fff; }
+.btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+
+/* Sections & cards */
+main { padding-bottom: 3rem; }
+.section { padding: 2.5rem 0; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 48rem; }
+
+.grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.5rem; display: flex; flex-direction: column;
+}
+.card p { margin: 0 0 1rem; }
+.card .more { margin-top: auto; font-weight: 600; }
+.tag {
+  display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .02em;
+  color: var(--accent); text-transform: uppercase; margin-bottom: .4rem;
+}
+
+.facility {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1.75rem; margin-bottom: 1.5rem; scroll-margin-top: 90px;
+}
+.facility h2 { margin-top: 0; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: .3rem 1rem; margin: 1rem 0; }
+.facts dt { font-weight: 600; color: var(--muted); }
+.facts dd { margin: 0; }
+@media (max-width: 520px) {
+  .facts { grid-template-columns: 1fr; }
+  .facts dd { margin-bottom: .5rem; }
+}
+
+.notice {
+  background: #e9f0f7; border-left: 5px solid var(--primary);
+  padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.5rem 0;
+}
+
+/* Sichtbare Platzhalter – vor Livegang ALLE ersetzen (Suche nach class="todo") */
+.todo {
+  background: var(--todo-bg); color: var(--todo-text);
+  padding: 0 .3em; border-radius: 4px; font-style: italic;
+}
+
+/* Footer */
+.site-footer {
+  background: var(--primary-dark); color: #e6edf4; padding: 2.5rem 0 1.5rem; font-size: .95rem;
+}
+.site-footer a { color: #fff; }
+.footer-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.site-footer h2 { color: #fff; font-size: 1.1rem; margin: 0 0 .5rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.2); margin-top: 2rem; padding-top: 1rem; }
+
+/* Schriftgröße umschalten */
+html.large-text { font-size: 131.25%; }
+.font-toggle {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  font: inherit; font-size: .85rem; padding: .3em .6em; cursor: pointer; color: var(--text);
+}
+
+@media print {
+  .site-header, .site-footer, .btn-row { display: none; }
+  .hero { background: none; color: #000; padding: 0; }
+  .hero h1 { color: #000; }
+}
+html.large-text .main-nav ul { flex-wrap: wrap; }
