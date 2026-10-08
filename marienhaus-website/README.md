@@ -1,6 +1,8 @@
 # Website Marienhaus St. Johann e.V.
 
-Statische Website (reines HTML/CSS, ~2 KB JavaScript). Kein Build, kein CMS, keine Datenbank.
+Statische Website: HTML, CSS, ~9 KB Vanilla-JavaScript. Kein Build, kein CMS, keine Datenbank, keine Drittanbieter.
+
+**Features:** Aurora-Hero (Canvas, ¼-Auflösung, 30 fps, pausiert außerhalb des Viewports), Seitenübergänge per View Transitions API, Live-Anzeige freier Plätze, Pflegekosten-Rechner (Eigenanteil inkl. § 43c SGB XI), interaktive SVG-Standortkarte, Dark Mode, Schriftgrößen-Umschalter, Scroll-Reveals. `prefers-reduced-motion` schaltet alle Animationen ab.
 
 ## Struktur
 
@@ -12,22 +14,27 @@ Statische Website (reines HTML/CSS, ~2 KB JavaScript). Kein Build, kein CMS, kei
 | `ueber-uns.html` | Verein, Auftrag, Vorstand |
 | `karriere.html` | Stellen, Ausbildung, Freiwilligendienst |
 | `spenden.html` | Marienhaus-Stiftung, Spendenkonto, Ehrenamt |
-| `kontakt.html` | Ansprechpartner |
+| `kosten.html` | Kostenrechner + Erklärung Heimentgelt |
+| `kontakt.html` | Ansprechpartner, Karte |
 | `impressum.html`, `datenschutz.html` | Pflichtangaben (Entwürfe) |
-| `assets/style.css`, `assets/main.js` | Layout, Mobilmenü, Schriftgrößen-Umschalter |
+| `assets/data.js` | **Von der Verwaltung pflegbar:** freie Plätze, Kostensätze, Leistungsbeträge |
+| `assets/style.css`, `assets/main.js` | Designsystem, Interaktion |
+| `assets/fonts/` | Fraunces + Inter (OFL), lokal gehostet |
 
-Lokal ansehen: `index.html` im Browser öffnen oder `python3 -m http.server` im Ordner.
+Lokal ansehen: `python3 -m http.server` im Ordner, dann http://localhost:8000 (per `file://` blockiert der Browser die Schriften).
 
 ## Vor dem Livegang (Pflicht)
 
 1. **Alle Platzhalter ersetzen** – sie sind gelb markiert. Finden mit:
    `grep -n 'class="todo"' *.html`
-2. **Fakten prüfen.** Die Inhalte stammen aus öffentlichen Verzeichnissen (Stand teils 2021):
+2. **`assets/data.js` mit echten Werten füllen** – Kostensätze sind aktuell BEISPIELWERTE, die Platzanzeige ist fiktiv. Mit Beispielwerten live zu gehen wäre irreführend (Heimrecht/UWG).
+   Die Platzanzeige nur aktivieren, wenn jemand sie verbindlich wöchentlich pflegt – sonst entfernen.
+3. **Fakten prüfen.** Die Inhalte stammen aus öffentlichen Verzeichnissen (Stand teils 2021):
    Platzzahlen (82 / 38), Adressen inkl. PLZ (Kirchstr. 13, Talstr. 29/31, Sonnenbergstr. 2), Trägerschaft.
-3. **Impressum & Datenschutz** von Vorstand bzw. Datenschutzbeauftragtem freigeben lassen.
+4. **Impressum & Datenschutz** von Vorstand bzw. Datenschutzbeauftragtem freigeben lassen.
    Katholischer Träger → vermutlich **KDG** statt DSGVO als Rechtsgrundlage.
-4. **Bilder:** nur mit schriftlicher Einwilligung abgebildeter Bewohner:innen/Mitarbeitender (KUG/DSGVO bzw. KDG).
-   Bilder nach `assets/img/`, als WebP, max. ~200 KB, immer mit `alt`-Text.
+5. **Logo & Bilder:** Das Signet ist ein Platzhalter – offizielles Vereinslogo einsetzen. Bilder nur mit schriftlicher Einwilligung abgebildeter Bewohner:innen/Mitarbeitender (KUG/DSGVO bzw. KDG).
+   Ablage in `assets/img/`, als WebP, max. ~200 KB, immer mit `alt`-Text.
 
 ## Hosting
 

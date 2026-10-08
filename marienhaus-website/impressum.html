@@ -3,71 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impressum – Marienhaus St. Johann e.V.</title>
+  <title>Impressum · Marienhaus St. Johann e.V.</title>
   <meta name="description" content="Impressum des Marienhaus St. Johann e.V.">
+  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1522" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
+  <script>try{var t=localStorage.getItem("mh-theme");if(t)document.documentElement.setAttribute("data-theme",t);if(localStorage.getItem("mh-large")==="1")document.documentElement.classList.add("large-text")}catch(e){}</script>
+  <script src="assets/data.js" defer></script>
   <script src="assets/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>Beratung &amp; Platzanfrage: <a href="kontakt.html"><span class="todo">[Telefon]</span></a></span>
-      <button class="font-toggle" type="button" aria-pressed="false">A+ Größere Schrift</button>
-    </div>
-  </div>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <strong>Marienhaus St. Johann e.V.</strong>
-        <span>Wohnen und Pflege im Alter in Freiburg</span>
+      <a class="brand" href="index.html" aria-label="Marienhaus St. Johann e.V. – Startseite">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M11 30V18a9 9 0 0 1 18 0v12" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 8.5l1.3 2.7 3 .4-2.2 2 .6 3-2.7-1.5-2.7 1.5.6-3-2.2-2 3-.4z" fill="#d98d2b"/><path d="M15.5 30v-7.5a4.5 4.5 0 0 1 9 0V30" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <span class="brand-text"><strong>Marienhaus St. Johann</strong><span>Wohnen &amp; Pflege · Freiburg</span></span>
       </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menü</button>
       <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
         <ul>
-          <li><a href="index.html">Start</a></li>
           <li><a href="einrichtungen.html">Einrichtungen</a></li>
           <li><a href="tagespflege.html">Tagespflege</a></li>
+          <li><a href="kosten.html">Kosten</a></li>
           <li><a href="ueber-uns.html">Über uns</a></li>
           <li><a href="karriere.html">Karriere</a></li>
           <li><a href="spenden.html">Spenden</a></li>
           <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="nav-prefs"><button class="icon-btn" type="button" data-font-toggle aria-pressed="false" aria-label="Größere Schrift">A+</button><button class="icon-btn" type="button" data-theme-toggle aria-label="Dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button></li>
         </ul>
       </nav>
+      <div class="tools">
+        <button class="icon-btn pref" type="button" data-font-toggle aria-pressed="false" aria-label="Größere Schrift">A+</button>
+        <button class="icon-btn pref" type="button" data-theme-toggle aria-label="Dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
     </div>
   </header>
 
   <main id="inhalt">
-    <div class="container section">
-      <h1>Impressum</h1>
-      <h2>Angaben gemäß § 5 DDG</h2>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Rechtliches</span>
+        <h1>Impressum</h1>
+        <p class="lead">Angaben gemäß § 5 DDG.</p>
+      </div>
+    </section>
+    <div class="container section prose">
       <p>Marienhaus St. Johann e.V.<br>Talstraße 29<br>79102 Freiburg im Breisgau</p>
-      <p><strong>Vertreten durch den Vorstand:</strong> <span class="todo">[vertretungsberechtigte Vorstandsmitglieder laut Vereinsregister]</span></p>
-      <p><strong>Registereintrag:</strong> Vereinsregister, Amtsgericht Freiburg, Registernummer <span class="todo">[VR …]</span></p>
-      <h2>Kontakt</h2>
-      <p>Telefon: <span class="todo">[Telefon]</span><br>E-Mail: <span class="todo">[E-Mail]</span></p>
-      <h2>Umsatzsteuer-ID</h2>
-      <p><span class="todo">[USt-IdNr. – nur falls vorhanden, sonst Abschnitt löschen]</span></p>
-      <h2>Aufsichtsbehörde</h2>
-      <p><span class="todo">[Heimaufsicht Stadt Freiburg – Angabe prüfen]</span></p>
-      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-      <p><span class="todo">[Name, Anschrift wie oben]</span></p>
-      <h2>Verbraucherstreitbeilegung</h2>
-      <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. <span class="todo">[Bei Heimverträgen (WBVG) prüfen lassen]</span></p>
+      <h2>Vertretungsberechtigter Vorstand</h2><p><span class="todo">laut Vereinsregister</span></p>
+      <h2>Registereintrag</h2><p>Vereinsregister, Amtsgericht Freiburg, <span class="todo">VR …</span></p>
+      <h2>Kontakt</h2><p>Telefon <span class="todo">Telefon</span><br><span class="todo">E-Mail</span></p>
+      <h2>Umsatzsteuer-ID</h2><p><span class="todo">nur falls vorhanden, sonst Abschnitt löschen</span></p>
+      <h2>Verantwortlich nach § 18 Abs. 2 MStV</h2><p><span class="todo">Name, Anschrift</span></p>
+      <h2>Verbraucherstreitbeilegung</h2><p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. <span class="todo">bei Heimverträgen (WBVG) juristisch prüfen</span></p>
+      <h2>Schriften</h2><p>Fraunces und Inter, SIL Open Font License, lokal eingebunden.</p>
     </div>
 
   </main>
 
   <footer class="site-footer">
     <div class="container">
+      <p class="footer-claim">Alt werden. <em>Zuhause</em> bleiben.</p>
       <div class="footer-grid">
         <div>
-          <h2>Marienhaus St. Johann e.V.</h2>
-          <p>Talstraße 29<br>79102 Freiburg im Breisgau</p>
-          <p>Telefon: <span class="todo">[Telefon Verwaltung]</span><br>E-Mail: <span class="todo">[E-Mail Verwaltung]</span></p>
+          <h2>Verwaltung</h2>
+          <p>Marienhaus St. Johann e.V.<br>Talstraße 29<br>79102 Freiburg im Breisgau</p>
         </div>
         <div>
-          <h2>Einrichtungen</h2>
+          <h2>Kontakt</h2>
+          <p>Telefon <span class="todo">Telefon</span><br><span class="todo">E-Mail</span></p>
+        </div>
+        <div>
+          <h2>Häuser</h2>
           <ul>
             <li><a href="einrichtungen.html#st-johann">Wohnheim St. Johann</a></li>
             <li><a href="einrichtungen.html#st-marienhaus">St. Marienhaus</a></li>
@@ -76,14 +85,20 @@
           </ul>
         </div>
         <div>
-          <h2>Rechtliches</h2>
+          <h2>Verein</h2>
           <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+            <li><a href="spenden.html">Stiftung &amp; Spenden</a></li>
             <li><a href="impressum.html">Impressum</a></li>
             <li><a href="datenschutz.html">Datenschutz</a></li>
           </ul>
         </div>
       </div>
-      <p class="footer-bottom">© <span id="year">2026</span> Marienhaus St. Johann e.V.</p>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Marienhaus St. Johann e.V.</span>
+        <span>Ohne Cookies. Ohne Tracking.</span>
+      </div>
     </div>
   </footer>
 </body>
