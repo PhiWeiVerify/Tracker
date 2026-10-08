@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marienhaus St. Johann e.V.</title>
+  <meta name="description" content="Marienhaus St. Johann e.V.: Wohnen, Pflege und Tagespflege für ältere Menschen in Freiburg-Wiehre und Freiburg-Littenweiler.">
+  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1522" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script>try{var t=localStorage.getItem("mh-theme");if(t)document.documentElement.setAttribute("data-theme",t);if(localStorage.getItem("mh-large")==="1")document.documentElement.classList.add("large-text")}catch(e){}</script>
+  <script src="assets/data.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Marienhaus St. Johann e.V. – Startseite">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M11 30V18a9 9 0 0 1 18 0v12" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 8.5l1.3 2.7 3 .4-2.2 2 .6 3-2.7-1.5-2.7 1.5.6-3-2.2-2 3-.4z" fill="#d98d2b"/><path d="M15.5 30v-7.5a4.5 4.5 0 0 1 9 0V30" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <span class="brand-text"><strong>Marienhaus St. Johann</strong><span>Wohnen &amp; Pflege · Freiburg</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="einrichtungen.html">Einrichtungen</a></li>
+          <li><a href="tagespflege.html">Tagespflege</a></li>
+          <li><a href="kosten.html">Kosten</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+          <li><a href="spenden.html">Spenden</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="nav-prefs"><button class="icon-btn" type="button" data-font-toggle aria-pressed="false" aria-label="Größere Schrift">A+</button><button class="icon-btn" type="button" data-theme-toggle aria-label="Dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button></li>
+        </ul>
+      </nav>
+      <div class="tools">
+        <button class="icon-btn pref" type="button" data-font-toggle aria-pressed="false" aria-label="Größere Schrift">A+</button>
+        <button class="icon-btn pref" type="button" data-theme-toggle aria-label="Dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="hero">
+      <canvas class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Altenhilfe in Freiburg · Wiehre &amp; Littenweiler</span>
+          <h1><span class="split-line"><span>Alt werden.</span></span><span class="split-line"><span><em>Zuhause</em></span></span><span class="split-line"><span>bleiben.</span></span></h1>
+          <p class="lead">Drei Häuser, eine Tagespflege und ein Versprechen: Menschen im Alter ein Zuhause zu geben – und ihre Angehörigen zu entlasten.</p>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="kontakt.html">Beratung anfragen <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="kosten.html">Kosten berechnen</a>
+          </div>
+        </div>
+        <aside class="status-card" aria-labelledby="status-h" data-reveal style="--d:.4s">
+          <div class="status-head">
+            <h2 id="status-h" class="live" style="font-family:var(--sans);font-size:.78rem"><span class="live-dot" aria-hidden="true"></span>Freie Plätze</h2>
+          </div>
+          <ul class="status-list" id="status-list"><li><span>Bitte rufen Sie uns an.</span></li></ul>
+          <p class="status-foot">Stand: <span id="status-stand">–</span> · <span class="todo">Beispieldaten</span></p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Würde</span><span>Geborgenheit</span><span>Gemeinschaft</span><span>Pflege mit Zeit</span><span>Seelsorge</span><span>Mitten im Viertel</span>
+        <span>Würde</span><span>Geborgenheit</span><span>Gemeinschaft</span><span>Pflege mit Zeit</span><span>Seelsorge</span><span>Mitten im Viertel</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal><span class="eyebrow">Unsere Häuser</span><h2>Überschaubar. <em>Persönlich.</em> Nah.</h2></div>
+          <p class="lead" data-reveal style="--d:.1s">Kleine Wohngruppen statt anonymer Flure: In allen Häusern leben Menschen in vertrauter Umgebung, begleitet von festen Teams – mitten in ihrem Stadtteil.</p>
+        </div>
+        <div class="bento">
+          <a class="tile span-4 tall dark" href="einrichtungen.html#st-johann" data-reveal>
+            <span class="eyebrow">Wiehre · Kirchstraße</span>
+            <div class="tile-num" data-count="82">0<small>Bewohner:innen</small></div>
+            <h3>Wohnheim St. Johann</h3>
+            <p>Fünf Wohngruppen, ein Zuhause. Familiäre Atmosphäre im Herzen der Wiehre.</p>
+            <span class="go">Haus entdecken <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile span-2" href="einrichtungen.html#st-antonius" data-reveal style="--d:.1s">
+            <span class="eyebrow">Littenweiler</span>
+            <div class="tile-num" data-count="38">0<small>Einzelzimmer</small></div>
+            <h3>Stahlbad St. Antonius</h3>
+            <span class="go">Mehr <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile span-2 gold" href="tagespflege.html" data-reveal style="--d:.2s">
+            <span class="eyebrow">Wiehre</span>
+            <h3>Tagespflege</h3>
+            <p>Morgens abgeholt, abends zurück. Tagsüber in bester Gesellschaft.</p>
+            <span class="go">Mehr <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile span-3" href="einrichtungen.html#st-marienhaus" data-reveal>
+            <span class="eyebrow">Wiehre · Talstraße</span>
+            <h3>St. Marienhaus</h3>
+            <p>Stationäre Pflege, Tür an Tür mit der Verwaltung des Vereins.</p>
+            <span class="go">Mehr <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile span-3" href="ueber-uns.html" data-reveal style="--d:.1s">
+            <span class="eyebrow">Träger</span>
+            <h3>Getragen von der Gemeinde</h3>
+            <p>Im Auftrag der katholischen Seelsorgeeinheiten Wiehre/Günterstal und Freiburg-Ost.</p>
+            <span class="go">Über den Verein <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--bg-2)">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal><span class="eyebrow">Kostenrechner</span><h2>Was kostet ein Platz – <em>wirklich?</em></h2></div>
+          <p class="lead" data-reveal style="--d:.1s">Drei Klicks statt Tabellenstudium: Der Rechner zeigt Ihren Eigenanteil inklusive des gesetzlichen Zuschlags der Pflegekasse.</p>
+        </div>
+        <div class="calc">
+          <form class="calc-panel" data-calc data-reveal onsubmit="return false">
+            <fieldset class="field" style="border:0;padding:0;margin:0 0 1.6rem">
+              <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Haus</legend>
+              <div class="seg"><input type="radio" name="haus" id="h-haus-st-johann" value="st-johann" checked><label for="h-haus-st-johann">St. Johann</label><input type="radio" name="haus" id="h-haus-st-marienhaus" value="st-marienhaus"><label for="h-haus-st-marienhaus">St. Marienhaus</label><input type="radio" name="haus" id="h-haus-st-antonius" value="st-antonius"><label for="h-haus-st-antonius">St. Antonius</label></div>
+            </fieldset>
+            <fieldset class="field" style="border:0;padding:0;margin:0 0 1.6rem">
+              <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Pflegegrad</legend>
+              <div class="seg"><input type="radio" name="pg" id="h-pg-2" value="2"><label for="h-pg-2">PG 2</label><input type="radio" name="pg" id="h-pg-3" value="3" checked><label for="h-pg-3">PG 3</label><input type="radio" name="pg" id="h-pg-4" value="4"><label for="h-pg-4">PG 4</label><input type="radio" name="pg" id="h-pg-5" value="5"><label for="h-pg-5">PG 5</label></div>
+            </fieldset>
+            <fieldset class="field" style="border:0;padding:0;margin:0">
+              <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Bisherige Wohndauer im Pflegeheim</legend>
+              <div class="seg"><input type="radio" name="dauer" id="h-dauer-0" value="0" checked><label for="h-dauer-0">bis 12 Mon.</label><input type="radio" name="dauer" id="h-dauer-1" value="1"><label for="h-dauer-1">13–24 Mon.</label><input type="radio" name="dauer" id="h-dauer-2" value="2"><label for="h-dauer-2">25–36 Mon.</label><input type="radio" name="dauer" id="h-dauer-3" value="3"><label for="h-dauer-3">über 36 Mon.</label></div>
+            </fieldset>
+          </form>
+          <div class="result" data-reveal style="--d:.1s" aria-live="polite">
+            <span class="eyebrow">Ihr voraussichtlicher Eigenanteil</span>
+            <div class="result-big" data-c="big">–</div>
+            <div class="result-sub" data-c="sub"></div>
+            <div class="bar" aria-hidden="true"><span class="b1" data-c="b1"></span><span class="b2" data-c="b2"></span><span class="b3" data-c="b3"></span><span class="b4" data-c="b4"></span></div>
+            <ul class="breakdown">
+              <li><span><i style="background:#7fa2ff"></i>Pflegebedingter Eigenanteil (EEE)</span><span data-c="eee"></span></li>
+              <li><span>Zuschlag der Pflegekasse (§ 43c)</span><span data-c="zu"></span></li>
+              <li><span><i style="background:#d98d2b"></i>Unterkunft &amp; Verpflegung</span><span data-c="uv"></span></li>
+              <li><span><i style="background:#9cc1a8"></i>Investitionskosten</span><span data-c="inv"></span></li>
+              <li class="total"><span>Eigenanteil pro Monat</span><span data-c="tot"></span></li>
+              <li><span><i style="background:#e7dccb"></i>Zahlt die Pflegekasse</span><span data-c="kasse"></span></li>
+              <li><span>Heimentgelt gesamt</span><span data-c="heim"></span></li>
+            </ul>
+            <p class="insight" data-c="insight"></p>
+            <p class="disclaimer"><strong>Beispielwerte – nicht die aktuellen Sätze unserer Häuser.</strong> Unverbindliche Orientierung, Monat mit 30,42 Tagen. Reicht das Einkommen nicht, kann „Hilfe zur Pflege“ beim Sozialamt beantragt werden. Wir beraten Sie gern.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div data-reveal><span class="eyebrow">Standorte</span><h2>Mitten in <em>Freiburg.</em></h2></div>
+          <p class="lead" data-reveal style="--d:.1s">Zwischen Dreisam und Schwarzwaldrand: kurze Wege für Angehörige, vertraute Nachbarschaft für Bewohnerinnen und Bewohner.</p>
+        </div>
+        <div class="map-wrap" data-reveal>
+          <svg class="map-svg" viewBox="0 0 900 480" role="img" aria-labelledby="map-t">
+            <title id="map-t">Schematische Karte: Standorte in Freiburg-Wiehre und Freiburg-Littenweiler</title>
+            <path class="forest" d="M0 400 C150 360 260 420 420 395 S700 330 900 360 L900 480 L0 480Z"/>
+            <path class="forest" d="M820 0 C780 80 860 140 900 150 L900 0Z"/>
+            <path class="road" d="M0 120 L900 175"/><path class="road" d="M260 0 L300 480"/><path class="road" d="M120 300 L900 300"/><path class="road" d="M560 80 L600 400"/>
+            <path class="river" d="M0 215 C120 225 200 200 300 215 S480 240 580 215 S760 185 900 205"/>
+            <text class="district" x="150" y="140">Altstadt</text>
+            <text class="district" x="270" y="350">Wiehre</text>
+            <text class="district" x="690" y="140">Littenweiler</text>
+            <text class="district" x="40" y="250" style="font-style:italic;letter-spacing:.05em;text-transform:none">Dreisam</text>
+            <g class="pin" data-id="st-johann" tabindex="0" role="button" aria-label="Wohnheim St. Johann, Kirchstraße 13">
+              <circle class="halo" cx="285" cy="282" r="14"/><circle class="core" cx="285" cy="282" r="8"/><text x="250" y="318">St. Johann</text></g>
+            <g class="pin" data-id="st-marienhaus" tabindex="0" role="button" aria-label="St. Marienhaus und Verwaltung, Talstraße">
+              <circle class="halo" cx="395" cy="262" r="14"/><circle class="core" cx="395" cy="262" r="8"/><text x="412" y="267">St. Marienhaus</text></g>
+            <g class="pin" data-id="st-antonius" tabindex="0" role="button" aria-label="Stahlbad St. Antonius, Sonnenbergstraße 2">
+              <circle class="halo" cx="760" cy="238" r="14"/><circle class="core" cx="760" cy="238" r="8"/><text x="680" y="274">St. Antonius</text></g>
+          </svg>
+        </div>
+        <div class="map-legend">
+          <button type="button" data-id="st-johann" aria-pressed="false"><strong>Wohnheim St. Johann</strong><span>Kirchstraße 13 · Wiehre</span></button>
+          <button type="button" data-id="st-marienhaus" aria-pressed="false"><strong>St. Marienhaus</strong><span>Talstraße 31 · Wiehre · Verwaltung Nr. 29</span></button>
+          <button type="button" data-id="st-antonius" aria-pressed="false"><strong>Stahlbad St. Antonius</strong><span>Sonnenbergstraße 2 · Littenweiler</span></button>
+        </div>
+        <p class="map-note">Schematische Darstellung, nicht maßstäblich. Für die Anfahrt: Adresse in Ihrer Karten-App öffnen.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="bento">
+          <a class="tile span-3" href="karriere.html" data-reveal>
+            <span class="eyebrow">Karriere</span>
+            <h3 style="font-size:clamp(1.8rem,3.5vw,2.6rem)">Pflege mit <em>Haltung.</em></h3>
+            <p>Pflegefachkräfte, Auszubildende, Freiwillige – wir suchen Menschen, die mit uns Alter in Würde gestalten.</p>
+            <span class="go">Offene Stellen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="tile span-3 gold" href="spenden.html" data-reveal style="--d:.1s">
+            <span class="eyebrow">Marienhaus-Stiftung</span>
+            <h3 style="font-size:clamp(1.8rem,3.5vw,2.6rem)">Wünsche <em>erfüllen.</em></h3>
+            <p>Ein Ausflug, ein Hobby, ein besonderer Moment: Die Stiftung macht möglich, was sonst offen bliebe.</p>
+            <span class="go">Helfen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-claim">Alt werden. <em>Zuhause</em> bleiben.</p>
+      <div class="footer-grid">
+        <div>
+          <h2>Verwaltung</h2>
+          <p>Marienhaus St. Johann e.V.<br>Talstraße 29<br>79102 Freiburg im Breisgau</p>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <p>Telefon <span class="todo">Telefon</span><br><span class="todo">E-Mail</span></p>
+        </div>
+        <div>
+          <h2>Häuser</h2>
+          <ul>
+            <li><a href="einrichtungen.html#st-johann">Wohnheim St. Johann</a></li>
+            <li><a href="einrichtungen.html#st-marienhaus">St. Marienhaus</a></li>
+            <li><a href="einrichtungen.html#st-antonius">Stahlbad St. Antonius</a></li>
+            <li><a href="tagespflege.html">Tagespflege Wiehre</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Verein</h2>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+            <li><a href="spenden.html">Stiftung &amp; Spenden</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Marienhaus St. Johann e.V.</span>
+        <span>Ohne Cookies. Ohne Tracking.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

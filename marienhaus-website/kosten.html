@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kosten · Marienhaus St. Johann e.V.</title>
+  <meta name="description" content="Pflegekosten-Rechner: Eigenanteil im Pflegeheim beim Marienhaus St. Johann e.V. berechnen, inklusive Leistungszuschlag nach § 43c SGB XI.">
+  <meta name="theme-color" content="#f6f1e9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0c1522" media="(prefers-color-scheme: dark)">
+  <link rel="preload" href="assets/fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script>try{var t=localStorage.getItem("mh-theme");if(t)document.documentElement.setAttribute("data-theme",t);if(localStorage.getItem("mh-large")==="1")document.documentElement.classList.add("large-text")}catch(e){}</script>
+  <script src="assets/data.js" defer></script>
+  <script src="assets/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Marienhaus St. Johann e.V. – Startseite">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M11 30V18a9 9 0 0 1 18 0v12" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M20 8.5l1.3 2.7 3 .4-2.2 2 .6 3-2.7-1.5-2.7 1.5.6-3-2.2-2 3-.4z" fill="#d98d2b"/><path d="M15.5 30v-7.5a4.5 4.5 0 0 1 9 0V30" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+        <span class="brand-text"><strong>Marienhaus St. Johann</strong><span>Wohnen &amp; Pflege · Freiburg</span></span>
+      </a>
+      <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="einrichtungen.html">Einrichtungen</a></li>
+          <li><a href="tagespflege.html">Tagespflege</a></li>
+          <li><a href="kosten.html" aria-current="page">Kosten</a></li>
+          <li><a href="ueber-uns.html">Über uns</a></li>
+          <li><a href="karriere.html">Karriere</a></li>
+          <li><a href="spenden.html">Spenden</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li class="nav-prefs"><button class="icon-btn" type="button" data-font-toggle aria-pressed="false" aria-label="Größere Schrift">A+</button><button class="icon-btn" type="button" data-theme-toggle aria-label="Dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button></li>
+        </ul>
+      </nav>
+      <div class="tools">
+        <button class="icon-btn pref" type="button" data-font-toggle aria-pressed="false" aria-label="Größere Schrift">A+</button>
+        <button class="icon-btn pref" type="button" data-theme-toggle aria-label="Dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menü"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inhalt">
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Kostenrechner</span>
+        <h1>Kosten <em>transparent.</em></h1>
+        <p class="lead">Wählen Sie Haus, Pflegegrad und Wohndauer – der Rechner zeigt Ihren Eigenanteil und was die Pflegekasse übernimmt.</p>
+      </div>
+    </section>
+    <div class="container section">
+        <div class="calc">
+          <form class="calc-panel" data-calc data-reveal onsubmit="return false">
+            <fieldset class="field" style="border:0;padding:0;margin:0 0 1.6rem">
+              <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Haus</legend>
+              <div class="seg"><input type="radio" name="haus" id="k-haus-st-johann" value="st-johann" checked><label for="k-haus-st-johann">St. Johann</label><input type="radio" name="haus" id="k-haus-st-marienhaus" value="st-marienhaus"><label for="k-haus-st-marienhaus">St. Marienhaus</label><input type="radio" name="haus" id="k-haus-st-antonius" value="st-antonius"><label for="k-haus-st-antonius">St. Antonius</label></div>
+            </fieldset>
+            <fieldset class="field" style="border:0;padding:0;margin:0 0 1.6rem">
+              <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Pflegegrad</legend>
+              <div class="seg"><input type="radio" name="pg" id="k-pg-2" value="2"><label for="k-pg-2">PG 2</label><input type="radio" name="pg" id="k-pg-3" value="3" checked><label for="k-pg-3">PG 3</label><input type="radio" name="pg" id="k-pg-4" value="4"><label for="k-pg-4">PG 4</label><input type="radio" name="pg" id="k-pg-5" value="5"><label for="k-pg-5">PG 5</label></div>
+            </fieldset>
+            <fieldset class="field" style="border:0;padding:0;margin:0">
+              <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Bisherige Wohndauer im Pflegeheim</legend>
+              <div class="seg"><input type="radio" name="dauer" id="k-dauer-0" value="0" checked><label for="k-dauer-0">bis 12 Mon.</label><input type="radio" name="dauer" id="k-dauer-1" value="1"><label for="k-dauer-1">13–24 Mon.</label><input type="radio" name="dauer" id="k-dauer-2" value="2"><label for="k-dauer-2">25–36 Mon.</label><input type="radio" name="dauer" id="k-dauer-3" value="3"><label for="k-dauer-3">über 36 Mon.</label></div>
+            </fieldset>
+          </form>
+          <div class="result" data-reveal style="--d:.1s" aria-live="polite">
+            <span class="eyebrow">Ihr voraussichtlicher Eigenanteil</span>
+            <div class="result-big" data-c="big">–</div>
+            <div class="result-sub" data-c="sub"></div>
+            <div class="bar" aria-hidden="true"><span class="b1" data-c="b1"></span><span class="b2" data-c="b2"></span><span class="b3" data-c="b3"></span><span class="b4" data-c="b4"></span></div>
+            <ul class="breakdown">
+              <li><span><i style="background:#7fa2ff"></i>Pflegebedingter Eigenanteil (EEE)</span><span data-c="eee"></span></li>
+              <li><span>Zuschlag der Pflegekasse (§ 43c)</span><span data-c="zu"></span></li>
+              <li><span><i style="background:#d98d2b"></i>Unterkunft &amp; Verpflegung</span><span data-c="uv"></span></li>
+              <li><span><i style="background:#9cc1a8"></i>Investitionskosten</span><span data-c="inv"></span></li>
+              <li class="total"><span>Eigenanteil pro Monat</span><span data-c="tot"></span></li>
+              <li><span><i style="background:#e7dccb"></i>Zahlt die Pflegekasse</span><span data-c="kasse"></span></li>
+              <li><span>Heimentgelt gesamt</span><span data-c="heim"></span></li>
+            </ul>
+            <p class="insight" data-c="insight"></p>
+            <p class="disclaimer"><strong>Beispielwerte – nicht die aktuellen Sätze unserer Häuser.</strong> Unverbindliche Orientierung, Monat mit 30,42 Tagen. Reicht das Einkommen nicht, kann „Hilfe zur Pflege“ beim Sozialamt beantragt werden. Wir beraten Sie gern.</p>
+          </div>
+        </div>
+      <div class="prose">
+        <h2>So setzt sich das Heimentgelt zusammen</h2>
+        <ul>
+          <li><strong>Pflegebedingte Kosten:</strong> Die Pflegekasse zahlt einen festen Betrag je Pflegegrad. Den Rest – den einrichtungseinheitlichen Eigenanteil (EEE) – zahlen alle Bewohner:innen ab Pflegegrad 2 gleich.</li>
+          <li><strong>Zuschlag nach § 43c SGB XI:</strong> Die Pflegekasse übernimmt zusätzlich 15 % des EEE im ersten Jahr, 30 % im zweiten, 50 % im dritten und 75 % ab dem vierten Jahr.</li>
+          <li><strong>Unterkunft und Verpflegung</strong> sowie <strong>Investitionskosten</strong> tragen Bewohner:innen selbst.</li>
+          <li>Reichen Rente und Vermögen nicht aus, übernimmt das Sozialamt die Differenz („Hilfe zur Pflege“). Niemand muss deshalb auf einen Platz verzichten.</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-claim">Alt werden. <em>Zuhause</em> bleiben.</p>
+      <div class="footer-grid">
+        <div>
+          <h2>Verwaltung</h2>
+          <p>Marienhaus St. Johann e.V.<br>Talstraße 29<br>79102 Freiburg im Breisgau</p>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <p>Telefon <span class="todo">Telefon</span><br><span class="todo">E-Mail</span></p>
+        </div>
+        <div>
+          <h2>Häuser</h2>
+          <ul>
+            <li><a href="einrichtungen.html#st-johann">Wohnheim St. Johann</a></li>
+            <li><a href="einrichtungen.html#st-marienhaus">St. Marienhaus</a></li>
+            <li><a href="einrichtungen.html#st-antonius">Stahlbad St. Antonius</a></li>
+            <li><a href="tagespflege.html">Tagespflege Wiehre</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Verein</h2>
+          <ul>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="karriere.html">Karriere</a></li>
+            <li><a href="spenden.html">Stiftung &amp; Spenden</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Marienhaus St. Johann e.V.</span>
+        <span>Ohne Cookies. Ohne Tracking.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
