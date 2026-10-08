@@ -89,43 +89,39 @@
   /* ---------- Kostenrechner ---------- */
   var eur = new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
   function initCalc() {
-    var form = document.getElementById("calc"), D = window.MH_DATA;
-    if (!form || !D) return;
-    var out = {
-      big: document.getElementById("c-big"), sub: document.getElementById("c-sub"),
-      eee: document.getElementById("c-eee"), zu: document.getElementById("c-zu"), uv: document.getElementById("c-uv"),
-      inv: document.getElementById("c-inv"), tot: document.getElementById("c-tot"), kasse: document.getElementById("c-kasse"),
-      heim: document.getElementById("c-heim"), ins: document.getElementById("c-insight"),
-      b1: document.getElementById("b1"), b2: document.getElementById("b2"), b3: document.getElementById("b3"), b4: document.getElementById("b4")
-    };
-    var shown = 0;
-    function animateTo(v) {
-      if (reduced) { out.big.textContent = eur.format(v); shown = v; return; }
-      var from = shown, t0 = null;
-      (function step(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 700), e = 1 - Math.pow(1 - p, 3);
-        shown = from + (v - from) * e; out.big.textContent = eur.format(shown); if (p < 1) requestAnimationFrame(step); })(performance.now());
-    }
-    function calc() {
-      var f = new FormData(form);
-      var h = D.kosten[f.get("haus")], z = D.zuschlag[+f.get("dauer")], pg = +f.get("pg");
-      var zu = Math.round(h.eee * z.pct);
-      var eigen = h.eee - zu + h.uv + h.invest;
-      var kasse = D.leistung[pg] + zu;
-      var heim = kasse + eigen;
-      animateTo(eigen);
-      out.sub.textContent = "pro Monat Eigenanteil · " + h.name;
-      out.eee.textContent = eur.format(h.eee);
-      out.zu.textContent = "− " + eur.format(zu) + " (" + Math.round(z.pct * 100) + " %)";
-      out.uv.textContent = eur.format(h.uv);
-      out.inv.textContent = eur.format(h.invest);
-      out.tot.textContent = eur.format(eigen);
-      out.kasse.textContent = eur.format(kasse);
-      out.heim.textContent = eur.format(heim);
-      out.b1.style.flexGrow = h.eee - zu; out.b2.style.flexGrow = h.uv; out.b3.style.flexGrow = h.invest; out.b4.style.flexGrow = kasse;
-      out.ins.textContent = "Gut zu wissen: Ihr Eigenanteil ist bei Pflegegrad 2 bis 5 gleich hoch – ein höherer Pflegegrad erhöht nur den Anteil der Pflegekasse (hier " + eur.format(D.leistung[pg]) + "). Je länger Sie bei uns wohnen, desto höher der Zuschlag.";
-    }
-    form.addEventListener("change", calc);
-    calc();
+    var D = window.MH_DATA;
+    if (!D) return;
+    [].slice.call(document.querySelectorAll("[data-calc]")).forEach(function (form) {
+      var box = form.parentNode, out = {};
+      ["big", "sub", "eee", "zu", "uv", "inv", "tot", "kasse", "heim", "insight", "b1", "b2", "b3", "b4"].forEach(function (k) { out[k] = box.querySelector('[data-c="' + k + '"]'); });
+      var shown = 0;
+      function animateTo(v) {
+        if (reduced) { out.big.textContent = eur.format(v); shown = v; return; }
+        var from = shown, t0 = null;
+        (function step(t) { if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 700), e = 1 - Math.pow(1 - p, 3);
+          shown = from + (v - from) * e; out.big.textContent = eur.format(shown); if (p < 1) requestAnimationFrame(step); })(performance.now());
+      }
+      function calc() {
+        var f = new FormData(form);
+        var h = D.kosten[f.get("haus")], z = D.zuschlag[+f.get("dauer")], pg = +f.get("pg");
+        var zu = Math.round(h.eee * z.pct);
+        var eigen = h.eee - zu + h.uv + h.invest;
+        var kasse = D.leistung[pg] + zu;
+        animateTo(eigen);
+        out.sub.textContent = "pro Monat Eigenanteil · " + h.name;
+        out.eee.textContent = eur.format(h.eee);
+        out.zu.textContent = "− " + eur.format(zu) + " (" + Math.round(z.pct * 100) + " %)";
+        out.uv.textContent = eur.format(h.uv);
+        out.inv.textContent = eur.format(h.invest);
+        out.tot.textContent = eur.format(eigen);
+        out.kasse.textContent = eur.format(kasse);
+        out.heim.textContent = eur.format(kasse + eigen);
+        out.b1.style.flexGrow = h.eee - zu; out.b2.style.flexGrow = h.uv; out.b3.style.flexGrow = h.invest; out.b4.style.flexGrow = kasse;
+        out.insight.textContent = "Gut zu wissen: Ihr Eigenanteil ist bei Pflegegrad 2 bis 5 gleich hoch – ein höherer Pflegegrad erhöht nur den Anteil der Pflegekasse (hier " + eur.format(D.leistung[pg]) + "). Je länger Sie bei uns wohnen, desto höher der Zuschlag.";
+      }
+      form.addEventListener("change", calc);
+      calc();
+    });
   }
 
   /* ---------- Standortkarte ---------- */

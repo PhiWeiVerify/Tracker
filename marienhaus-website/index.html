@@ -121,35 +121,35 @@
           <p class="lead" data-reveal style="--d:.1s">Drei Klicks statt Tabellenstudium: Der Rechner zeigt Ihren Eigenanteil inklusive des gesetzlichen Zuschlags der Pflegekasse.</p>
         </div>
         <div class="calc">
-          <form class="calc-panel" id="calc" data-reveal onsubmit="return false">
+          <form class="calc-panel" data-calc data-reveal onsubmit="return false">
             <fieldset class="field" style="border:0;padding:0;margin:0 0 1.6rem">
               <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Haus</legend>
-              <div class="seg"><input type="radio" name="haus" id="haus-st-johann" value="st-johann" checked><label for="haus-st-johann">St. Johann</label><input type="radio" name="haus" id="haus-st-marienhaus" value="st-marienhaus"><label for="haus-st-marienhaus">St. Marienhaus</label><input type="radio" name="haus" id="haus-st-antonius" value="st-antonius"><label for="haus-st-antonius">St. Antonius</label></div>
+              <div class="seg"><input type="radio" name="haus" id="h-haus-st-johann" value="st-johann" checked><label for="h-haus-st-johann">St. Johann</label><input type="radio" name="haus" id="h-haus-st-marienhaus" value="st-marienhaus"><label for="h-haus-st-marienhaus">St. Marienhaus</label><input type="radio" name="haus" id="h-haus-st-antonius" value="st-antonius"><label for="h-haus-st-antonius">St. Antonius</label></div>
             </fieldset>
             <fieldset class="field" style="border:0;padding:0;margin:0 0 1.6rem">
               <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Pflegegrad</legend>
-              <div class="seg"><input type="radio" name="pg" id="pg-2" value="2"><label for="pg-2">PG 2</label><input type="radio" name="pg" id="pg-3" value="3" checked><label for="pg-3">PG 3</label><input type="radio" name="pg" id="pg-4" value="4"><label for="pg-4">PG 4</label><input type="radio" name="pg" id="pg-5" value="5"><label for="pg-5">PG 5</label></div>
+              <div class="seg"><input type="radio" name="pg" id="h-pg-2" value="2"><label for="h-pg-2">PG 2</label><input type="radio" name="pg" id="h-pg-3" value="3" checked><label for="h-pg-3">PG 3</label><input type="radio" name="pg" id="h-pg-4" value="4"><label for="h-pg-4">PG 4</label><input type="radio" name="pg" id="h-pg-5" value="5"><label for="h-pg-5">PG 5</label></div>
             </fieldset>
             <fieldset class="field" style="border:0;padding:0;margin:0">
               <legend class="label" style="font-weight:600;font-size:.9rem;margin-bottom:.6rem">Bisherige Wohndauer im Pflegeheim</legend>
-              <div class="seg"><input type="radio" name="dauer" id="dauer-0" value="0" checked><label for="dauer-0">bis 12 Mon.</label><input type="radio" name="dauer" id="dauer-1" value="1"><label for="dauer-1">13–24 Mon.</label><input type="radio" name="dauer" id="dauer-2" value="2"><label for="dauer-2">25–36 Mon.</label><input type="radio" name="dauer" id="dauer-3" value="3"><label for="dauer-3">über 36 Mon.</label></div>
+              <div class="seg"><input type="radio" name="dauer" id="h-dauer-0" value="0" checked><label for="h-dauer-0">bis 12 Mon.</label><input type="radio" name="dauer" id="h-dauer-1" value="1"><label for="h-dauer-1">13–24 Mon.</label><input type="radio" name="dauer" id="h-dauer-2" value="2"><label for="h-dauer-2">25–36 Mon.</label><input type="radio" name="dauer" id="h-dauer-3" value="3"><label for="h-dauer-3">über 36 Mon.</label></div>
             </fieldset>
           </form>
           <div class="result" data-reveal style="--d:.1s" aria-live="polite">
             <span class="eyebrow">Ihr voraussichtlicher Eigenanteil</span>
-            <div class="result-big" id="c-big">–</div>
-            <div class="result-sub" id="c-sub"></div>
-            <div class="bar" aria-hidden="true"><span class="b1" id="b1"></span><span class="b2" id="b2"></span><span class="b3" id="b3"></span><span class="b4" id="b4"></span></div>
+            <div class="result-big" data-c="big">–</div>
+            <div class="result-sub" data-c="sub"></div>
+            <div class="bar" aria-hidden="true"><span class="b1" data-c="b1"></span><span class="b2" data-c="b2"></span><span class="b3" data-c="b3"></span><span class="b4" data-c="b4"></span></div>
             <ul class="breakdown">
-              <li><span><i style="background:#7fa2ff"></i>Pflegebedingter Eigenanteil (EEE)</span><span id="c-eee"></span></li>
-              <li><span>Zuschlag der Pflegekasse (§ 43c)</span><span id="c-zu"></span></li>
-              <li><span><i style="background:#d98d2b"></i>Unterkunft &amp; Verpflegung</span><span id="c-uv"></span></li>
-              <li><span><i style="background:#9cc1a8"></i>Investitionskosten</span><span id="c-inv"></span></li>
-              <li class="total"><span>Eigenanteil pro Monat</span><span id="c-tot"></span></li>
-              <li><span><i style="background:#e7dccb"></i>Zahlt die Pflegekasse</span><span id="c-kasse"></span></li>
-              <li><span>Heimentgelt gesamt</span><span id="c-heim"></span></li>
+              <li><span><i style="background:#7fa2ff"></i>Pflegebedingter Eigenanteil (EEE)</span><span data-c="eee"></span></li>
+              <li><span>Zuschlag der Pflegekasse (§ 43c)</span><span data-c="zu"></span></li>
+              <li><span><i style="background:#d98d2b"></i>Unterkunft &amp; Verpflegung</span><span data-c="uv"></span></li>
+              <li><span><i style="background:#9cc1a8"></i>Investitionskosten</span><span data-c="inv"></span></li>
+              <li class="total"><span>Eigenanteil pro Monat</span><span data-c="tot"></span></li>
+              <li><span><i style="background:#e7dccb"></i>Zahlt die Pflegekasse</span><span data-c="kasse"></span></li>
+              <li><span>Heimentgelt gesamt</span><span data-c="heim"></span></li>
             </ul>
-            <p class="insight" id="c-insight"></p>
+            <p class="insight" data-c="insight"></p>
             <p class="disclaimer"><strong>Beispielwerte – nicht die aktuellen Sätze unserer Häuser.</strong> Unverbindliche Orientierung, Monat mit 30,42 Tagen. Reicht das Einkommen nicht, kann „Hilfe zur Pflege“ beim Sozialamt beantragt werden. Wir beraten Sie gern.</p>
           </div>
         </div>
